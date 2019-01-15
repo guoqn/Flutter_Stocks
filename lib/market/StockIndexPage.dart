@@ -74,8 +74,8 @@ class StockIndexPageState extends State<StockIndexPage> {
                 toastLength: Toast.LENGTH_SHORT,
                 gravity: ToastGravity.BOTTOM,
                 timeInSecForIos: 1,
-                bgcolor: "#OOOOOO",
-                textcolor: '#ffffff');
+                backgroundColor: Colors.white,
+                textColor: Colors.black);
           }
         });
       });
@@ -85,8 +85,8 @@ class StockIndexPageState extends State<StockIndexPage> {
           toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.BOTTOM,
           timeInSecForIos: 1,
-          bgcolor: "#OOOOOO",
-          textcolor: '#ffffff');
+          backgroundColor: Colors.white,
+                textColor: Colors.black);
     });
 
   }

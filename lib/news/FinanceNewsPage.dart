@@ -66,7 +66,6 @@ class FinanceNewsPageState extends State<FinanceNewsPage> {
     );
   }
 
-
   /**
    * 列表item
    */
@@ -173,7 +172,7 @@ class FinanceNewsPageState extends State<FinanceNewsPage> {
    */
   void getDatas(int request_type) async {
     String query;
-    if (request_type!=LOADMORE_REQIEST) {
+    if (request_type != LOADMORE_REQIEST) {
       query =
           "source(limit: 20,sort:\"desc\"),{data{}, page_info{has_next_page, end_cursor}}";
     } else {
@@ -185,11 +184,11 @@ class FinanceNewsPageState extends State<FinanceNewsPage> {
         }
         query =
             "source(limit: 20,__id:{gte:${lastone_id_start},lte:${lastone_id_end}},sort:\"desc\"),{data{}, page_info{has_next_page, end_cursor}}";
-      }else{
-        query="";
+      } else {
+        query = "";
       }
     }
-    if (query!=null&&query.isNotEmpty) {
+    if (query != null && query.isNotEmpty) {
       String url = GetFinanceNewsUrl(query);
       print("请求的url===》" + url);
       Dio dio = new Dio();
@@ -202,8 +201,8 @@ class FinanceNewsPageState extends State<FinanceNewsPage> {
           toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.BOTTOM,
           timeInSecForIos: 1,
-          bgcolor: "#OOOOOO",
-          textcolor: '#ffffff');
+          backgroundColor: Colors.white,
+          textColor: Colors.black);
     }
   }
 
@@ -225,12 +224,12 @@ class FinanceNewsPageState extends State<FinanceNewsPage> {
    */
   void onItemClick(int i, String articleTitle) {
     String h5_url = (listData[i].data as Data).url;
-    String content= (listData[i].data as Data).articleContent;
+    String content = (listData[i].data as Data).articleContent;
     Navigator.push(
         context,
         new MaterialPageRoute(
 //            builder: (context) => new NewsWebPage(h5_url,'新闻详情')));
-            builder: (context) => new NewsDetailsPage(articleTitle,content)));
+            builder: (context) => new NewsDetailsPage(articleTitle, content)));
   }
 
   final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey =
@@ -260,7 +259,7 @@ class FinanceNewsPageState extends State<FinanceNewsPage> {
         lastone_id = result.pageInfo.endCursor;
         has_next_page = result.pageInfo.hasNextPage;
         setState(() {
-          if (request_type!=LOADMORE_REQIEST) {
+          if (request_type != LOADMORE_REQIEST) {
             // 不是加载更多，则直接为变量赋值
             for (Data data in result.data) {
               ListEnity listEnity = new ListEnity("main", data);
@@ -277,18 +276,19 @@ class FinanceNewsPageState extends State<FinanceNewsPage> {
             listData = list1;
           }
           // 判断是否获取了所有的数据，如果是，则需要显示底部的"我也是有底线的"布局
-          if (has_next_page == false&&"endline"!= listData[listData.length].type) {
+          if (has_next_page == false &&
+              "endline" != listData[listData.length].type) {
             ListEnity listEnity = new ListEnity("endline", null);
             listData.add(listEnity);
           }
-          if(request_type==REFRESH_REQIEST){
+          if (request_type == REFRESH_REQIEST) {
             Fluttertoast.showToast(
                 msg: "刷新成功",
                 toastLength: Toast.LENGTH_SHORT,
                 gravity: ToastGravity.BOTTOM,
                 timeInSecForIos: 1,
-                bgcolor: "#OOOOOO",
-                textcolor: '#ffffff');
+                backgroundColor: Colors.white,
+                textColor: Colors.black);
           }
         });
       } else {
@@ -297,8 +297,8 @@ class FinanceNewsPageState extends State<FinanceNewsPage> {
             toastLength: Toast.LENGTH_SHORT,
             gravity: ToastGravity.BOTTOM,
             timeInSecForIos: 1,
-            bgcolor: "#OOOOOO",
-            textcolor: '#ffffff');
+            backgroundColor: Colors.white,
+            textColor: Colors.black);
       }
     } catch (e) {
       print("异常==》" + e.toString());

@@ -68,8 +68,8 @@ class MyDrawer extends StatelessWidget {
                   toastLength: Toast.LENGTH_SHORT,
                   gravity: ToastGravity.BOTTOM,
                   timeInSecForIos: 1,
-                  bgcolor: "#OOOOOO",
-                  textcolor: '#ffffff');
+                  backgroundColor: Colors.white,
+                textColor: Colors.black);
             },
             child: new CircleAvatar(    //圆形图标控件
               backgroundImage: new NetworkImage('https://avatars2.githubusercontent.com/u/12659236?s=460&v=4'),//图片调取自网络
@@ -128,8 +128,8 @@ class MyDrawer extends StatelessWidget {
                 toastLength: Toast.LENGTH_SHORT,
                 gravity: ToastGravity.BOTTOM,
                 timeInSecForIos: 1,
-                bgcolor: "#OOOOOO",
-                textcolor: '#ffffff');
+                backgroundColor: Colors.white,
+                textColor: Colors.black);
             break;
           case 1:
             // 设置
@@ -138,8 +138,8 @@ class MyDrawer extends StatelessWidget {
                 toastLength: Toast.LENGTH_SHORT,
                 gravity: ToastGravity.BOTTOM,
                 timeInSecForIos: 1,
-                bgcolor: "#OOOOOO",
-                textcolor: '#ffffff');
+                backgroundColor: Colors.white,
+                textColor: Colors.black);
             break;
         }
       },

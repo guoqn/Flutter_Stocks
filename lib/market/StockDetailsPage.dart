@@ -430,8 +430,8 @@ class StockDetailsPageState extends State<StockDetailsPage>
                 toastLength: Toast.LENGTH_SHORT,
                 gravity: ToastGravity.BOTTOM,
                 timeInSecForIos: 1,
-                bgcolor: "#OOOOOO",
-                textcolor: '#ffffff');
+                backgroundColor: Colors.white,
+                textColor: Colors.black);
           }
         });
       }).catchError((e) {
@@ -440,8 +440,8 @@ class StockDetailsPageState extends State<StockDetailsPage>
             toastLength: Toast.LENGTH_SHORT,
             gravity: ToastGravity.BOTTOM,
             timeInSecForIos: 1,
-            bgcolor: "#OOOOOO",
-            textcolor: '#ffffff');
+            backgroundColor: Colors.white,
+                textColor: Colors.black);
       });
     }
   }
